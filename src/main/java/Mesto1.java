@@ -16,7 +16,7 @@ import static io.restassured.RestAssured.given;
         given()
                 .auth().oauth2(bearerToken)
                 .delete("/api/cards/{photoId}/likes", photoId)
-                .then().log().all().assertThat().statusCode(HttpURLConnection.HTTP_OK);
+                .then().log().all().assertThat().statusCode(HttpURLConnection.HTTP_ACCEPTED); // Неверный статус код
     }
 
     // Лайк фотографии по photoId
